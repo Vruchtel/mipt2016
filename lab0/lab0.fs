@@ -4,9 +4,13 @@ open System
 open System.Net
 open System.Collections.Specialized
 
-let (email, name) = ("", "") // адрес почты и фамилия с инициалами
+let (email, name) = ("vruchtel.serafima@yandex.ru", "Вручтель С.В") // адрес почты и фамилия с инициалами
 
-let pascal c r = 1 // а тут решение
+let rec pascal c r = 
+    match c with
+    | 0 -> 1
+    | c when c = r -> 1
+    | _ -> pascal (c-1) (r-1) + pascal c (r-1)
 
 let printIt n = 
   "[" +
@@ -26,3 +30,5 @@ let main () =
   let responseString = Text.Encoding.Default.GetString(response)
 
   printf "%A\n" responseString
+
+main

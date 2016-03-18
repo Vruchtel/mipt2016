@@ -31,4 +31,4 @@ let main () =
 
   printf "%A\n" responseString
 
-main
+main()
